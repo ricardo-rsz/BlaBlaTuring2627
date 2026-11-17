@@ -43,6 +43,9 @@ class User(AbstractUser):
 class Course(models.Model):
     title = models.CharField(max_length=100)
 
+class Administration(models.Model):
+    pass
+
 
 class Student(models.Model):
     #¿Curso?
