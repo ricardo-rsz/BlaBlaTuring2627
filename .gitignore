@@ -18,6 +18,7 @@ media
 .idea/**/shelf
 .idea/misc.xml,
 .idea/jsLibraryMappings.xml
+.idea/BlaBlaTuring.iml
 
 # AWS User-specific
 .idea/**/aws.xml
