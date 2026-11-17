@@ -25,8 +25,29 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     username = None
     email = models.EmailField(unique=True)
+    ROLE = {
+        "TC": "Teacher",
+        "ST": "Student",
+        "AD": "Administration",
+    }
+
+    role = models.CharField(max_length=2, choices=ROLE)
+
     objects = UserManager()
     REQUIRED_FIELDS = []
 
     def __str__(self):
         return self.email
+
+
+class Course(models.Model):
+    title = models.CharField(max_length=100)
+
+
+class Student(models.Model):
+    #¿Curso?
+    pass
+
+class Teacher(models.Model):
+    pass
+
