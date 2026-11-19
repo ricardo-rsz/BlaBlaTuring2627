@@ -1,0 +1,11 @@
+<h1>User</h1>
+<ul>
+{% for user in object_list %}
+    <li>
+        {{ user.last_login }} | {{user.email}}
+    </li>
+{% empty %}
+    <li>No user yet.</li>
+{% endfor %}
+</ul>
+
