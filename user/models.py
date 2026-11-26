@@ -27,12 +27,12 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)
     objects = UserManager()
     REQUIRED_FIELDS = []
-    STUDENT_TYPE = [
+    USER_TYPE = [
         ("TC", "Teacher"),
         ("ST", "Student"),
         ("AD", "Administration"),
     ]
-    student_type = models.CharField(max_length=2, choices=STUDENT_TYPE,default=STUDENT_TYPE)
+    user_type = models.CharField(max_length=2, choices=USER_TYPE,default="ST")
 
     def __str__(self):
         return self.email
@@ -42,7 +42,13 @@ class Administration:
     pass
 
 class Teacher:
-    pass
+    TURN = [
+        ("M", "Morning"),
+        ("E", "Evening"),
+        ("B", "Both")
+    ]
+
+    turn = models.CharField(max_length=1, choices=TURN,default="B")
 
 class Student:
     pass
